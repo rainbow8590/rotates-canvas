@@ -28,12 +28,12 @@ var ball = new Ball({
   
   参数设置：
   {
-    x:            中心点X坐标
-    y:            中心点Y坐标
-    r:            圆的半径
-    lineWidth:    描边的粗细
-    arcfillColor: 圆的填充颜色
-    strokeColor： 圆的描边颜色
+    x:              中心点X坐标
+    y:              中心点Y坐标
+    r:              圆的半径
+    lineWidth:      描边的粗细
+    arcfillColor:   圆的填充颜色
+    strokeColor：   圆的描边颜色
     textfillColor： 文本的颜色
     font：          文本字号字体
     text：          文本内容
