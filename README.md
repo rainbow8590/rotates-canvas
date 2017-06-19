@@ -10,7 +10,7 @@
 ```
 封装的代码在html里面，使用的时候可以摘出来，放在单独的js文件中；
 
-**创建圆：**
+创建圆：
 var ball = new Ball({
 		x: canvas.width/2,
 		y: canvas.height/2,
@@ -27,7 +27,8 @@ var ball = new Ball({
 		addDeg: 0.005
 	})
   
-  **参数设置：**
+  
+  参数设置：
   {
     x:              中心点X坐标
     y:              中心点Y坐标
