@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	canvas{
+		background: #f0f0f0;
+	}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	//最大的虚线
+	var bigDash = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 220,
+		lineWidth : 3,
+		arcfillColor: 'rgba(230,230,230,.0)',
+		strokeColor: 'rgba(0,0,0,.2)',
+		textfillColor: '#fff',
+		font:'20px 楷体',
+		text:' ',
+		isDash: true,
+		angle: 0,
+		cR: 0,
+		addDeg: 0
+	})
+
+	//中间的虚线
+	var midDash = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 120,
+		lineWidth : 3,
+		arcfillColor: 'rgba(230,230,230,.0)',
+		strokeColor: 'rgba(0,0,0,.2)',
+		textfillColor: '#fff',
+		font:'20px 楷体',
+		text:' ',
+		isDash: true,
+		angle: 0,
+		cR: 0,
+		addDeg: 0
+	})
+
+    //中心圆
+    var centerBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 60,
+		lineWidth : 40,
+		arcfillColor: '#525a82',
+		strokeColor: 'rgba(0,0,0,.1)',
+		textfillColor: '#fff',
+		font:'24px aria',
+		text:'WEB',
+		isDash: false,
+		angle: 0,
+		cR: 0,
+		addDeg: 0
+	})
+
+    //小圆 html5
+    var html5Ball = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 26,
+		lineWidth : 12,
+		arcfillColor: 'rgba(150,10,100,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'12px aria',
+		text:'HTML5',
+		isDash: false,
+		angle: 0,
+		cR: 120,
+		addDeg: 0.005
+	})
+  
+
+    //小圆 css3
+    var css3Ball = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 28,
+		lineWidth : 12,
+		arcfillColor: 'rgba(150,10,100,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'12px aria',
+		text:'CSS3',
+		isDash: false,
+		angle: 60,
+		cR: 120,
+		addDeg: 0.005
+	})
+  
+
+    //小圆 canvas
+    var canvasBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 28,
+		lineWidth : 12,
+		arcfillColor: 'rgba(255,216,0,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'12px aria',
+		text:'canvas',
+		isDash: false,
+		angle: 80,
+		cR: 120,
+		addDeg: 0.005
+	})
+   
+    //小圆 jquery
+    var jqueryBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 30,
+		lineWidth : 14,
+		arcfillColor: 'rgba(0,210,20,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'12px aria',
+		text:'jQuery',
+		isDash: false,
+		angle: 165,
+		cR: 120,
+		addDeg: 0.005
+	})
+  
+
+	//中圆 JS
+    var JSBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 40,
+		lineWidth : 14,
+		arcfillColor: 'rgba(0,210,20,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'12px aria',
+		text:'Javascript',
+		isDash: false,
+		angle: 135,
+		cR: 220,
+		addDeg: -0.002
+	})
+
+	
+
+	//中圆 Node
+    var NodeBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 46,
+		lineWidth : 14,
+		arcfillColor: 'rgba(255,216,0,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'16px aria',
+		text:'Node',
+		isDash: false,
+		angle: 105,
+		cR: 220,
+		addDeg: -0.002
+	})
+  
+
+	//中圆 bootstrap
+    var bootstrapBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 40,
+		lineWidth : 14,
+		arcfillColor: 'rgba(255,216,0,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'16px aria',
+		text:'Bootstrap',
+		isDash: false,
+		angle: 165,
+		cR: 220,
+		addDeg: -0.002
+	})
+ 
+	
+
+	//中圆 VUE
+    var vueBall = new Ball({
+		x: canvas.width/2,
+		y: canvas.height/2,
+		r: 40,
+		lineWidth : 14,
+		arcfillColor: 'rgba(150,10,100,.8)',
+		strokeColor: 'rgba(0,0,0,.05)',
+		textfillColor: '#fff',
+		font:'16px aria',
+		text:'VUE',
+		isDash: false,
+		angle: 0,
+		cR: 220,
+		addDeg: -0.002
+	})
+
+	var timer = null;
+	timer = setInterval(run,5)
+	//运动
+	function run(){
+		ctx.clearRect(0,0,canvas.width,canvas.height);	
+		bigDash.show();
+		midDash.show();
+		centerBall.show();
+
+		html5Ball.show();
+		css3Ball.show();
+		canvasBall.show();
+		jqueryBall.show();
+
+		JSBall.show();
+		NodeBall.show();
+		bootstrapBall.show();
+		vueBall.show();
+	}
+
+
+	canvas.onmouseover = function(){
+		clearInterval(timer);
+	}
+	canvas.onmouseout = function(){
+		timer = setInterval(run,5)
+	}
+/*
+x: 中心点X坐标
+y: 中心点Y坐标
+r: 圆的半径
+lineWidth:  描边的粗细
+arcfillColor: 圆的填充颜色
+strokeColor： 圆的描边颜色
+textfillColor： 文本的颜色
+font： 文本字号字体
+text： 文本内容
+isDash： 描边的类型(虚线)
+angle：圆开始旋转的角度
+cR：   圆旋转轨迹的半径
+addDeg：每次旋转增加的度数
+	*/
+
+	//创建小球
+	function Ball(option){
+		this.x = option.x;  
+		this.y = option.y;
+		this.r = option.r;
+		this.lineWidth = option.lineWidth;
+		this.arcfillColor= option.arcfillColor;
+		this.strokeColor= option.strokeColor;
+		this.textfillColor= option.textfillColor;
+		this.font= option.font;
+		this.text= option.text;
+		this.isDash = option.isDash;
+		this.angle = option.angle;
+		this.cR = option.cR;
+		this.addDeg = option.addDeg;
+		this.show = function(){
+			ctx.save();
+			this.sports();
+			ctx.beginPath();
+			ctx.lineWidth = this.lineWidth;
+			ctx.fillStyle = this.arcfillColor;
+			ctx.strokeStyle = this.strokeColor;
+			ctx.arc(this.x,this.y, this.r,0,Math.PI*2)
+			if(this.isDash){
+				ctx.setLineDash([10,10])
+			}
+			ctx.stroke();
+			ctx.fill();
+			//中心圆的文本
+			ctx.fillStyle = this.textfillColor;
+			ctx.font = this.font;
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(this.text,this.x,this.y)
+			ctx.restore();
+		};
+		this.sports = function(){
+			this.x = canvas.width/2 + Math.sin(this.angle)*this.cR;
+			this.y = canvas.height/2 + Math.cos(this.angle)*this.cR;
+			this.angle += this.addDeg;
+		}
+	}
+	</script>
+	
+</body>
+</html>
